@@ -25,8 +25,13 @@ if (Test-Path $physicalPath) {
         ## Change permissions
         ## Get the VirtualDirectoryObjet
         Write-Verbose "Info: Start loading the $virtualDirectoryName objet in memory"
-        $Folder = new-object System.DirectoryServices.DirectoryEntry("IIS://localhost/W3SVC/1/Root/Repository")
+        $Folder = new-object System.DirectoryServices.DirectoryEntry("IIS://localhost/W3SVC/1/Root/$virtualDirectoryName")
         Write-Verbose "Success: $virtualDirectoryName loaded!"
+
+	# Enable read the directory
+        Write-Verbose "Info: Start Applying read rights to $virtualDirectoryName"
+        $Folder.Put("AccessRead",$true)
+        Write-Verbose "Success: Read rights to $virtualDirectoryName applyed!"
 
         # Enable directory browsing
         Write-Verbose "Info: Start enabling browsing the $virtualDirectoryName directory."
