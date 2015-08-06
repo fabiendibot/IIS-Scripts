@@ -13,11 +13,7 @@ param(
     $TestFile = "TestResultsPS$PSVersion.xml"
     $ProjectRoot = $ENV:APPVEYOR_BUILD_FOLDER
     Set-Location $ProjectRoot
-   
-# Install IIS8 at first
-Install-WindowsFeature -Name Web-WebServer,Web-Scripting-Tools
-Install-WindowsFeature Web-Mgmt-Compat -IncludeAllSubFeature
-New-Item -ItemType Directory -Path C:\Repository
+
 
 #Run a test with the current version of PowerShell
     if($Test)
