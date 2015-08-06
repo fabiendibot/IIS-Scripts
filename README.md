@@ -1,3 +1,5 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/sa6ks71f2v6rfg91?svg=true)](https://ci.appveyor.com/project/fabiendibot/iis-scripts)
+
 
 # IIS-Scripts
 PowerShell scripts for IIS
