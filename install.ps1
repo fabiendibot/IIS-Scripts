@@ -1,4 +1,4 @@
-Configuration TheWall
+Configuration Firewall
 {
    
   Import-DSCResource -ModuleName PSDesiredStateConfiguration, xNetworking
